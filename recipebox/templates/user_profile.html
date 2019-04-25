@@ -1,0 +1,20 @@
+{% load static %}
+
+<h1>Author: {{ author.name }}</h1>
+<div>Bio: {{ author.bio }}</div>
+<div>Recipes by this author:</div>
+<ul>
+    {% for recipe in recipes %}
+    <li>
+      <a href="../../recipe/{{ recipe.id }}">{{ recipe.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<ul>
+    <div>My favorites</div>
+    {% for fav in favorites %}
+        <li>
+        <a href="../recipe/{{ recipe.id }}">{{ fav.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

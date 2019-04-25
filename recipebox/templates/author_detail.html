@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+    <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+<h3>{{author.user.username}}
+<br>
+
+<p>{{ author.bio }}</p>
+
+{% for recipe in recipes %}
+<li> 
+<a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a>
+</li>
+{% endfor %}
